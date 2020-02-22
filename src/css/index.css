@@ -1,0 +1,32 @@
+body{
+    font-family: 'Noto Serif', serif;
+    font-family: 'Crimson Text', serif;
+}
+#regbtn{
+    color: red;
+}
+#main{
+    margin-top: 0.4em;
+    padding: 0px;
+}
+#card{
+    text-align: center;
+    padding: 1em;
+   
+    border:none;
+}
+#card > h5{
+text-transform: uppercase;
+font-weight: bold;
+font-size: 2em;
+}
+footer{
+    background:rgba(43, 41, 41, 0.904);
+    padding:5px 0px 5px 0px;
+    color: white;
+    margin-bottom: 5px;
+}
+footer >div >a{
+    font-size:large;
+    margin-right: 5p;
+}

@@ -1,0 +1,75 @@
+body{
+    font-family: 'Noto Serif', serif;
+    font-family: 'Crimson Text', serif;
+}
+.header{
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+h5,h4{
+    font-weight: bold;
+}
+.navTab{
+    background:rgb(56, 30, 30);
+    color:white;
+    margin-right:5px;
+}
+#price{
+    font-size: larger;
+}
+.payimg{
+    height: 60px;
+    width: 100px;
+    margin: 25px;
+}
+#payform{
+    display: inline-block;
+    text-align: justify;
+}
+#details >div{
+    display: inline-block;
+    margin-right: 5px;
+}
+#details{
+    
+    padding:5px;
+   
+}
+#edith,#image-file,.files{
+    margin:10px;
+}
+#image-file{
+    width: 200px;
+}
+.files{
+    margin-bottom: 5px;
+}
+.changes-btn{
+    margin: 0px 0 10px 0;
+}
+#securitycode{
+    margin-left: 8px;
+    width:100px;
+}
+#cardNo{
+    width: 328px;
+    margin-right: 5px;
+}
+/*complaint css section*/
+#message-form > div{
+    display: inline-block;
+}
+#message{
+    width:375px;
+}
+.div{
+   text-align: center;
+}
+footer{
+    background:rgba(43, 41, 41, 0.904);
+    padding:5px 0px 5px 0px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
