@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawsome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/about.css">
+    <title>About Us</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+            <a class="navbar-brand" href="#"> <img src="http://www.placehold.it/48" alt="" class="mr-1 rounded">Tax Payment System</a>
+            <button class="navbar-toggler" type="button" data-target="#navbarcontent" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarcontent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="/index.html" class="nav-link ">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active">About Us</a></li>
+                    <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">
+                        <button class="btn btn-outline-danger"data-toggle="modal" data-target="#taxmodal">Pay Now</button>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Navigation Ends here-->
+        <!--Modal object starts here-->
+        <div class="modal fade" id="taxmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"id="modalTitle">Pay accrued Income and Revenue Tax</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control form-control-lg my-2" placeholder="Enter your Shop ID here" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-block btn-primary">Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal object ends here-->
+        <div class="card p-2 m-2">
+            <h4 class="card-title">About Us</h4>
+            <p class="lead card-body">Our Tax payment system ensure citizens pay their tax as at when due on time and with easy. <br/>
+                We are dedicated to making payments fast, easy and secure for our clients and their customers by providing the best technology available, the highest level of security and exceptional customer service. <br/>
+                With over 10 years of financial experience we are committed to delivering secured payment at all time.
+            </p>
+        </div class="card">
+        <!--Footer section starts here-->
+        <footer>
+            <div class="text-center">
+                <p>copyright &copy;2020. All rights reserved</p>
+            </div> 
+        </footer>
+    </div>
+    <script src="/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/fontawsome/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawsome/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Noto+Serif&display=swap" rel="stylesheet">
+
+    <title>Tax Payment System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+           <a class="navbar-brand" href="#"> <img src="http://www.placehold.it/48" alt="" class="mr-1 rounded">Tax Payment System</a>
+           <button class="navbar-toggler" type="button" data-target="#navbarcontent" data-toggle="collapse">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarcontent">
+               <ul class="navbar-nav ml-auto">
+                   <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                   <li class="nav-item"><a href="/about.html" class="nav-link">About Us</a></li>
+                   <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                   <li class="nav-item"><a href="#" class="nav-link">
+                       <button class="btn btn-outline-danger"data-toggle="modal" data-target="#taxmodal">Pay Now</button>
+                   </a></li>
+               </ul>
+           </div>
+        </div>
+        <!--Navbar ends here-->
+        <div class="carousel slide" id="taxcarousel" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li class="active" data-target="#taxcarousel" data-slide-to="0"></li>
+                <li data-target="#taxcarousel" data-slide-to="1"></li>
+                <li data-target="#taxcarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/src/images/tax-img.jpg" style="height:400px;" class="fluid d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="/src/images/tax-img-3.jpg" alt="" style="height:400px;" class=" fluid d-block w-100">              
+                </div>
+                <div class="carousel-item">
+                    <img src="/src/images/tax-img-2.jpg" style="height:400px;" class="fluid d-block w-100">
+                </div>
+            </div>
+            <a href="#taxcarousel" class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a href="#taxcarousel" class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!--Carousel slide ends here-->
+        <!--Modal object starts here-->
+        <div class="modal fade" id="taxmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"id="modalTitle">Pay accrued Income and Revenue Tax</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       <input type="text" id="shopID" class="form-control form-control-lg my-2" placeholder="Enter Shop ID here" required>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" id="payBtn" type="submit" class="btn btn-block btn-primary">
+                            Proceed to Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal object ends here-->
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col">
+                    <figure>
+                        <img src="http://www.placehold.it/400" alt="" class="fluid">
+                        <figcaption>Chairman Tax utilization committee.</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <aside>
+                        <div class="card" id="card">
+                            <h5 class="card-title text-center">My Tax My Economy</h5>
+                            <p class="lead">A democracy cannot exist as a permanent form of government. It can only exist until the people discover they can vote themselves largess out of the public treasury. From that moment on, the majority always votes for the canidate promising the most benefits from the public treasury, with the result that democracy always collapses over a loose fiscal policy--to be followed by a dictatorship.</p>
+                        </div>
+                    </aside>
+               </div>
+            </div>
+        </div>
+        <footer>
+            <div class="text-center">
+              <p>copyright &copy;2020. All rights reserved</p>
+            </div> 
+        </footer>
+    </div>
+    <script src="/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/fontawsome/js/all.min.js"></script>
+    <script src="/src/javascript/index.js"></script>
+</body>
+</html>

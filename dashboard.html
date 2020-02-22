@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawsome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/dashboard.css">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+            <a class="navbar-brand" href="#"> <img src="http://www.placehold.it/48" alt="" class="mr-1 rounded">Tax Payment System</a>
+            <button class="navbar-toggler" type="button" data-target="#navbarcontent" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarcontent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="/index.html" class="nav-link ">Home</a></li>
+                    <li class="nav-item"><a href="/about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">
+                        <button class="btn btn-outline-danger"data-toggle="modal" data-target="#taxmodal">Pay Now</button>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Navigation Ends here-->
+        <!--Modal object starts here-->
+        <div class="modal fade" id="taxmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"id="modalTitle">Pay accrued Income and Revenue Tax</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control form-control-lg my-2" placeholder="Enter your Shop ID here" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-block btn btn-primary">Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal object ends here-->
+        <div class="container">
+            <h3 class="header">Welcome To Pay Agent</h3>
+            <ul class="nav nav-tabs nav-justified" id="nav" role="tablist">
+                <li class="nav-item">
+                    <a href="#pay" class="nav-link h5 mb-0 navTab active" id="pay-tab" data-toggle="tab" role="tab" aria-controls="pay" aria-selected="true">
+                        Make Payment and Print Reciept
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#info" class="nav-link h5 mb-0 navTab " id="info-tab" data-toggle="tab" role="tab" aria-controls="info" aria-selected="false">
+                        Edit Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#notice" class="nav-link h5 mb-0 navTab" id="notice-tab" data-toggle="tab" role="tab" aria-controls="notice" aria-selected="false">
+                        Complaint
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dashbord-tab">
+                <div class="tab-pane fade pt-4 show active " id="pay" role="tabpanel" aria-labelledby="pay-tab">
+                    <h5 > Due Payment<b class="float-right"><span id="price">$400.00</span></b></h5 >
+                    <hr>
+                    <h5>Payment Method</h5>
+                    <div class="radio">
+                        <label class="radio-inline mr-4" for="cardradio"><input name="method-radio" type="radio" id="card"><img src="/src/images/cards.jpg" class="fluid payimg" alt=""></label>
+                        <label class="radio-inline mr-4" for="paypalradio"><input name="method-radio" type="radio"id="pay-pal"><img src="/src/images/paypal.jpg" class="fluid payimg" alt=""></label>
+                        <label class="radio-inline mr-4" for="bitradio"><input name="method-radio" type="radio" id="bit"><img src="/src/images/bitcoin.png" class="fluid payimg" alt=""></label>
+                    </div>
+                    <div>
+                        <h5>Card Details</h5>
+                        <form action="" id="payform">
+                            <div class="form-group">
+                                <input type="text" id="cardName" placeholder="Name on Card" class="form-control"> 
+                            </div>
+                            <div class="form-group form-inline">
+                                <input type="text" id="cardNo" class="form-control" placeholder="Credit Card Number">
+                        
+                                <span class="float-right" ><img  id="paylogo" src=""> </span>
+                            </div>
+                            <div class="form-group form-inline">
+                                <input type="text" placeholder="MM/YY" id="expirydate" class="form-control">
+                                <input type="text" placeholder="CVC" id="securitycode" class="form-control">
+                                
+                            </div>
+                           <div> <label for="" class="warning"></label></div>
+                            <button type="submit" role="button" id="submitcard" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane pt-4 fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                    <h5>Personal information</h5>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 mb-5">
+                            <figure>
+                                <img src="http://placehold.it/300" alt="" class="rounded-circle fluid">
+                                <figcaption>Client first and last Name</figcaption>
+                            </figure>
+                            <button class="btn btn-info" id="edit">Edit Photo</button>
+                            <div class="custom-file " id="image-file">
+                                <input type="file" class="custom-file-input" id="photofile" aria-labelledby="edit">
+                                <label for="photofile" class="custom-file-label">Choose Photo</label>
+                                <button class="btn files btn-info float-right">Upload Photo</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <form action="" id="details">
+                                <div class="form-group ">
+                                    <label for="firstNam">First Name:</label>
+                                    <input type="text" id="firstName" class="form-control">
+                                    <label for="lastName">Last Name:</label>
+                                    <input type="text" id="lastName" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="text" id="email" class="form-control">
+                                    <label for="phone">Phone No:</label>
+                                    <input type="text" id="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="street">Street Address:</label>
+                                    <input type="text" id="street" class="form-control">
+                                    <label for="shop">Shop No:</label>
+                                    <input type="text" id="shop" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City:</label>
+                                    <input type="text" id="city" class="form-control">
+                                    <label for="state">State/Province:</label>
+                                    <input type="text" id="state" class="form-control">
+                                </div>
+                                <label class="error" for=""></label>
+                                <button class="btn btn-lg btn-primary" id="changes-btn">Save Changes</button>
+                                <label class="successMessage" for=""></label>
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane pt-4 fade" id="notice" role="tabpanel" aria-labelledby="notice-tab">
+                    <h4>Send Us a Message</h4>
+                    <div class="div">
+                        <form action="" id="message-form">
+                            <div class="form-group form-inline">
+                                <label for="mFName">First Name:</label>
+                                <input type="text" id="mFName" placeholder="First Name" class="form-control">
+                                <label for="mLName">Last Name:</label>
+                                <input type="text" id="mLName" placeholder="Last Name" class="form-control">
+                            </div>
+                            <div class="form-group form-inline">
+                                <label for="mEmail">Email:</label>
+                                <input type="text" id="mEmail" placeholder="Email Address" class="form-control">
+                                <label for="mPhone">Phone No:</label>
+                                <input type="text" id="mPhone" placeholder="Phone Number" class="form-control">
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <textarea name="" id="message" cols="30" rows="10" placeholder="Enter Message here"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-send">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer section starts here-->
+        <footer>
+            <div class="text-center">
+                <p>copyright &copy;2020. All rights reserved</p>
+            </div> 
+        </footer>
+    </div>
+    <script src="/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/fontawsome/js/all.min.js"></script>
+    <script src="/src/javascript/dashboard.js"></script>
+</body>
+</html>
