@@ -42,34 +42,54 @@ submitCard.addEventListener('click',(e)=>{
     const numbPattern=/^[0-9]+$/;
     const datePattern=/^[0-9]{2}\/[0-9]{2}$/;
     e.preventDefault();
-    if(cards.checked ||bitcoin.checked||pal.checked){
-        if(!cardName.value.match(namePattern)||!cardNo.value.match(numbPattern)||!expire.value.match(datePattern)||!code.value.match(numbPattern))
-        {
-            warn.innerHTML='Wrong Input';
+
+    let html='<label><span id="spin" class="spinner-border float-right" role="status" aria-hidden="true"></span>Processing...</label>';
+    submitCard.innerHTML=html;
+    setTimeout(() => {
+        if(cards.checked ||bitcoin.checked||pal.checked){
+       
+            if(!cardName.value.match(namePattern)||!cardNo.value.match(numbPattern)||!expire.value.match(datePattern)||!code.value.match(numbPattern))
+            {
+                warn.innerHTML='Wrong Input';
+                warn.style.fontWeight='bold';
+                warn.style.fontSize='1.2em';
+                warn.style.marginTop='0';
+                warn.style.color='red';
+                submitCard.innerHTML='Submit';
+            }else if(code.value.length>3||expire.value.length>5){
+                warn.innerHTML='Wrong Input format!\nEnsure Card expiry date and CVC number are in correct format.';
+                warn.style.fontWeight='bold';
+                warn.style.fontSize='1.2em';
+                warn.style.marginTop='0';
+                warn.style.color='blue';
+                cardName.style.width='350px';
+                submitCard.innerHTML='Submit';
+            }else{
+                setTimeout(e=>{
+                    alert('Transaction Successfull.');
+                    cardName.value='';
+                    cardNo.value='';
+                    expire.value='';
+                    code.value='';
+                    logo.src='';
+                    logo.style.display='none'; //hides the card logo
+                    submitCard.innerHTML='Submit';
+                },4000);
+                warn.innerHTML='';
+               // submitCard.innerHTML='Submit';
+            }
+    
+        }else{
+            warn.innerHTML='Please Select Payment Method First.';
             warn.style.fontWeight='bold';
-            warn.style.fontSize='1.2em';
+            warn.style.fontSize='1.5em';
             warn.style.marginTop='0';
             warn.style.color='red';
-        }else{
-            setTimeout(e=>{
-                alert('Transaction Successfull.');
-                cardName.value='';
-                cardNo.value='';
-                expire.value='';
-                code.value='';
-                logo.src='';
-                logo.style.display='none'; //hides the card logo
-            },4000);
-            warn.innerHTML='';
-        }
-
-    }else{
-        warn.innerHTML='Please Select Payment Method First.';
-        warn.style.fontWeight='bold';
-        warn.style.fontSize='1.5em';
-        warn.style.marginTop='0';
-        warn.style.color='red';
-    }
+            submitCard.innerHTML='Submit';
+        }    
+        
+    }, 3000);
+   
     
 })
 //code to display users card type using its cvc number entered.
@@ -99,10 +119,13 @@ edithPhoto.addEventListener('click',(e)=>{
 })
 picture.addEventListener('click',(e)=>{
     e.preventDefault();
+    let html='<label><span id="spin" class="spinner-border float-right" role="status" aria-hidden="true"></span>Loading...</label>';
+    picture.innerHTML=html;
     setTimeout((e)=>{
         alert('Image uploaded successfully.');
         edithPhoto.style.display='block';
         selectImage.style.display='none';
+        picture.innerHTML='Upload Photo';
     },4000);
 })
 save.addEventListener('click',(e)=>{
@@ -115,8 +138,11 @@ save.addEventListener('click',(e)=>{
     const states=/\s+/;
     let error=document.querySelector('.error');
     let success=document.querySelector('.successMessage');
+    let html='<label><span id="spin" class="spinner-border float-right" role="status" aria-hidden="true"></span>Loading...</label>';
 
-    if(fName.value.match(namePattern) && lName.value.match(namePattern)&&
+    save.innerHTML=html;
+    setTimeout(() => {
+        if(fName.value.match(namePattern) && lName.value.match(namePattern)&&
         mail.value.match(mailPattern) &&phoneNo.value.match(numbPattern) &&
         street.value.match(streetPattern)&& shopNo.value.match(shopPattern)&& 
         city.value.match(namePattern)&&state.value.match(states)){
@@ -126,14 +152,15 @@ save.addEventListener('click',(e)=>{
            error.innerHTML='';
            success.innerHTML='Profile Updated with Success';
            success.style.color='green';
-           console.log(success.value);
+           save.innerHTML='Save Changes';
         }, 4000);
     }else{
-
-      
         error.innerHTML='Incorrect Data Entry.'
         error.style.color='red';
+        save.innerHTML='Save Changes';
     }
+
+    }, 2000);
 })
 //Compliant logic code section
 send.addEventListener('click',(e)=>{
@@ -143,12 +170,20 @@ send.addEventListener('click',(e)=>{
     const numbPattern=/^[0-9]+$/;
     const mailPattern=/\S+@\S+\.\S+/;
     const states=/\s+/;
-    if(firstName.value.match(namePattern)&&
+    let html='<label><span id="spin" class="spinner-border float-right" role="status" aria-hidden="true"></span>Loading...</label>';
+    
+    send.innerHTML=html;
+    setTimeout(() => {
+        if(firstName.value.match(namePattern)&&
         lastName.value.match(namePattern)&&email.value.match(mailPattern)&&
         phone.value.match(numbPattern)&&message.value.match(states))
     {
         alert('Message Sent.');
+        send.innerHTML='Send Message';
     }else{
         alert('Message failed');
+        send.innerHTML='Send Message';
     }
+    }, 3000);
+   
 })

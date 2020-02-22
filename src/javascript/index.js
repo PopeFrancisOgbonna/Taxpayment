@@ -1,7 +1,6 @@
 const shopId=document.querySelector("#shopID");
 const pay=document.querySelector("#payBtn");
 const spin=document.querySelector('#spin');
-const modal=document.querySelector('#taxmodal');
 const pattern=/^[a-zA-Z]{1}[0-9]+$/;
 
 
@@ -25,6 +24,4 @@ pay.addEventListener('click',e=>{
         }
        
     },300);
-    
-    
 })

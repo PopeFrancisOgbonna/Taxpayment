@@ -41,6 +41,7 @@ h5,h4{
 }
 #image-file{
     width: 200px;
+    display: none;
 }
 .files{
     margin-bottom: 5px;
